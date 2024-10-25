@@ -3,6 +3,7 @@ package com.ps;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 // User will be able to:
@@ -59,4 +60,70 @@ public class UserInterface {
         System.out.println("Load menu");
         // Load menu
     }
+    public static void main(String[] args){
+        loadAll();
+        int mainMenuCommand;
+        do {
+            System.out.println("Welcome to Abby's Like-New Cars! What would you like to do?");
+            System.out.println("1) Search by price");
+            System.out.println("2) Search by make and model");
+            System.out.println("3) Search by color");
+            System.out.println("4) Search by mileage");
+            System.out.println("5) Search by vehicle type (car, truck, suv, van)");
+            System.out.println("6) View all vehicles");
+            System.out.println("7) Add vehicle to inventory");
+            System.out.println("8) Remove vehicle from inventory");
+            System.out.println("0) Exit");
+            System.out.println("Enter your command");
+
+            try {
+                mainMenuCommand = commandscanner.nextInt();
+            } catch (InputMismatchException ime){
+                System.out.println("Invalid. Please enter a valid command.");
+                ime.printStackTrace();
+                commandscanner.nextInt();
+                mainMenuCommand = 0;
+            }
+            switch (mainMenuCommand){
+                case 1:
+                    searchByPrice();
+                    break;
+                case 2:
+                    searchByMakeModel();
+                    break;
+                case 3:
+                    searchByColor();
+                    break;
+                case 4:
+                    searchByMileage();
+                    break;
+                case 5:
+                    searchByType();
+                    break;
+                case 6:
+                    searchAll();
+                    break;
+                case 7:
+                    addVehicle();
+                    break;
+                case 8:
+                    removeVehicle();
+                    break;
+                case 0:
+                    System.out.println("Exiting...");
+                    break;
+                default:
+                    System.out.println("Command not found. Please try again!");
+
+            }
+        }while (mainMenuCommand !=0);
+    }
+    public static void searchByPrice(){}
+    public static void searchByMakeModel(){}
+    public static void searchByColor(){}
+    public static void searchByMileage(){}
+    public static void searchByType(){}
+    public static void searchAll(){}
+    public static void addVehicle(){}
+    public static void removeVehicle(){}
 }
