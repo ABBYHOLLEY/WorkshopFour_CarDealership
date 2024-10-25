@@ -118,7 +118,9 @@ public class UserInterface {
             }
         }while (mainMenuCommand !=0);
     }
-    public static void searchByPrice(){}
+    public static void searchByPrice(){
+        System.out.println("Enter the price range of the vehicle you are looking for");
+    }
     public static void searchByMakeModel(){}
     public static void searchByColor(){}
     public static void searchByMileage(){}
