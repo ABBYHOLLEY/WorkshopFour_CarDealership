@@ -41,7 +41,7 @@ public class UserInterface {
                 int odometer = Integer.parseInt(dealershiparray[6]);
                 int price = Integer.parseInt(dealershiparray[7]);
 
-               Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, vehicleColor, odometer, price);
+               Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, vehicleColor, odometer, (int) price);
                allVehiclesInInventory.add(vehicle);
             }
             bufferedReader.close();
@@ -126,6 +126,76 @@ public class UserInterface {
     public static void searchByMileage(){}
     public static void searchByType(){}
     public static void searchAll(){}
-    public static void addVehicle(){}
-    public static void removeVehicle(){}
+    public static void addVehicle(){
+        System.out.println("Please enter the details of the vehicle you would like to add.");
+
+        System.out.println("Enter vehicle vin: ");
+        String vin = inputScanner.nextLine();
+
+        System.out.println("Enter vehicle year: ");
+        int year = inputScanner.nextInt();
+        inputScanner.nextLine();
+
+        System.out.println("Enter vehicle make: ");
+        String make = inputScanner.nextLine();
+
+        System.out.println("Enter vehicle model: ");
+        String model = inputScanner.nextLine();
+
+        System.out.println("Enter vehicle type: ");
+        String vehicleType = inputScanner.nextLine();
+
+        System.out.println("Enter vehicle color: ");
+        String color = inputScanner.nextLine();
+
+        System.out.println("Enter odometer number: ");
+        int odometer = inputScanner.nextInt();
+        inputScanner.nextLine();
+
+        System.out.println("Enter vehicle price: ");
+        int price = inputScanner.nextInt();
+        inputScanner.nextLine();
+
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, (int) price);
+        allVehiclesInInventory.add(vehicle);
+
+        System.out.println("New vehicle added to inventory!");
+
+    }
+    public static void removeVehicle(){
+
+        System.out.println("Please enter the details of the vehicle you would like to remove.");
+
+        System.out.println("Enter vehicle vin: ");
+        String vin = inputScanner.nextLine();
+
+        System.out.println("Enter vehicle year: ");
+        int year = inputScanner.nextInt();
+        inputScanner.nextLine();
+
+        System.out.println("Enter vehicle make: ");
+        String make = inputScanner.nextLine();
+
+        System.out.println("Enter vehicle model: ");
+        String model = inputScanner.nextLine();
+
+        System.out.println("Enter vehicle type: ");
+        String vehicleType = inputScanner.nextLine();
+
+        System.out.println("Enter vehicle color: ");
+        String color = inputScanner.nextLine();
+
+        System.out.println("Enter odometer number: ");
+        int odometer = inputScanner.nextInt();
+        inputScanner.nextLine();
+
+        System.out.println("Enter vehicle price: ");
+        int price = inputScanner.nextInt();
+        inputScanner.nextLine();
+
+        Vehicle vehicle = new Vehicle(vin, year, make, model, vehicleType, color, odometer, (int) price);
+        allVehiclesInInventory.remove(vehicle);
+
+        System.out.println("Vehicle has been removed from inventory.");
+    }
 }
