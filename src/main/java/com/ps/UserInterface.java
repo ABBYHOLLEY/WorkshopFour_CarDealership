@@ -123,9 +123,19 @@ public class UserInterface {
     }
     public static void searchByMakeModel(){}
     public static void searchByColor(){}
-    public static void searchByMileage(){}
+    public static void searchByMileage(){
+        System.out.println("Enter the minimum mileage of the vehicle you are looking for: ");
+        int minMileage = inputScanner.nextInt();
+        System.out.println("Enter the maximum mileage of the vehicle you are looking for: ");
+        int maxMileage = inputScanner.nextInt();
+    }
     public static void searchByType(){}
-    public static void searchAll(){}
+    public static void searchAll(){
+        System.out.println("Displaying all vehicles in inventory..");
+        for (Vehicle vehicle: allVehiclesInInventory){
+            System.out.println(vehicle);
+        }
+    }
     public static void addVehicle(){
         System.out.println("Please enter the details of the vehicle you would like to add.");
 
